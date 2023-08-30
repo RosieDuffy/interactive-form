@@ -37,3 +37,19 @@ design.addEventListener("change", (e) => {
     }
   }
 });
+
+const activities = document.getElementById("activities");
+const totalElement = document.getElementById("activities-cost");
+let activitiesTotal = 0;
+
+activities.addEventListener("change", (e) => {
+  const activityCost = Number(e.target.getAttribute("data-cost"));
+
+  if (e.target.checked === true) {
+    activitiesTotal += activityCost;
+  } else {
+    activitiesTotal -= activityCost;
+  }
+
+  totalElement.innerHTML = `<p>Total: $${activitiesTotal}</p>`;
+});
