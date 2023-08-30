@@ -53,3 +53,30 @@ activities.addEventListener("change", (e) => {
 
   totalElement.innerHTML = `<p>Total: $${activitiesTotal}</p>`;
 });
+
+const payment = document.getElementById("payment");
+const creditCard = document.getElementById("credit-card");
+const paypal = document.getElementById("paypal");
+const bitcoin = document.getElementById("bitcoin");
+
+paypal.style.display = "none";
+bitcoin.style.display = "none";
+
+const secondChild = payment.children[1];
+secondChild.setAttribute("selected", true);
+
+payment.addEventListener("change", (e) => {
+  if (e.target.value === "paypal") {
+    paypal.style.display = "block";
+    creditCard.style.display = "none";
+    bitcoin.style.display = "none";
+  } else if (e.target.value === "bitcoin") {
+    paypal.style.display = "none";
+    creditCard.style.display = "none";
+    bitcoin.style.display = "block";
+  } else {
+    paypal.style.display = "none";
+    creditCard.style.display = "block";
+    bitcoin.style.display = "none";
+  }
+});
