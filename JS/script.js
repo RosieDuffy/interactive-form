@@ -77,17 +77,17 @@ secondChild.setAttribute("selected", true);
 
 payment.addEventListener("change", (e) => {
   if (e.target.value === "paypal") {
-    paypal.style.display = "block";
-    creditCard.style.display = "none";
-    bitcoin.style.display = "none";
+    paypal.hidden = false;
+    creditCard.hidden = true;
+    bitcoin.hidden = true;
   } else if (e.target.value === "bitcoin") {
-    paypal.style.display = "none";
-    creditCard.style.display = "none";
-    bitcoin.style.display = "block";
+    paypal.hidden = true;
+    creditCard.hidden = true;
+    bitcoin.hidden = false;
   } else {
-    paypal.style.display = "none";
-    creditCard.style.display = "block";
-    bitcoin.style.display = "none";
+    paypal.hidden = true;
+    creditCard.hidden = false;
+    bitcoin.hidden = true;
   }
 });
 
@@ -103,7 +103,7 @@ form.addEventListener("submit", (e) => {
   // Name Validation //
 
   const nameValue = inputName.value;
-  const nameTest = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  const nameTest = /^[a-zA-Z]+$/;
   const validName = nameTest.test(nameValue);
 
   if (validName === false || nameValue === "") {
