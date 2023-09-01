@@ -1,4 +1,4 @@
-// Name Section - adding focus to 'Name' field //
+// Name Section - adding focus to 'Name' field... //
 
 const inputName = document.getElementById("name");
 
