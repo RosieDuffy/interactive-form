@@ -69,8 +69,8 @@ const creditCard = document.getElementById("credit-card");
 const paypal = document.getElementById("paypal");
 const bitcoin = document.getElementById("bitcoin");
 
-paypal.style.display = "none";
-bitcoin.style.display = "none";
+paypal.hidden = true;
+bitcoin.hidden = true;
 
 const secondChild = payment.children[1];
 secondChild.setAttribute("selected", true);
@@ -103,7 +103,7 @@ form.addEventListener("submit", (e) => {
   // Name Validation //
 
   const nameValue = inputName.value;
-  const nameTest = /^[a-zA-Z]+$/;
+  const nameTest = /^[a-zA-Z]+[ ]?[a-zA-Z]+?$/;
   const validName = nameTest.test(nameValue);
 
   if (validName === false || nameValue === "") {
@@ -144,7 +144,7 @@ form.addEventListener("submit", (e) => {
   } else {
     activities.parentElement.classList.add("valid");
     activities.parentElement.classList.remove("not-valid");
-    activities.parentElement.lastElementChild.style.display = "none";
+    activities.lastElementChild.style.display = "none";
   }
 
   // Credit Card Validation //
