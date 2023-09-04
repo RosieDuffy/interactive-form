@@ -1,6 +1,6 @@
 // Name Section - adding focus to 'Name' field... //
 
-const inputName = document.getElementById("name");
+let inputName = document.getElementById("name");
 
 inputName.focus();
 
@@ -114,6 +114,7 @@ form.addEventListener("submit", (e) => {
   } else {
     inputName.parentElement.classList.add("valid");
     inputName.parentElement.classList.remove("not-valid");
+    inputName.classList.remove("error-border");
     inputName.parentElement.lastElementChild.style.display = "none";
   }
 
@@ -131,6 +132,7 @@ form.addEventListener("submit", (e) => {
   } else {
     email.parentElement.classList.add("valid");
     email.parentElement.classList.remove("not-valid");
+    email.classList.remove("error-border");
     email.parentElement.lastElementChild.style.display = "none";
   }
 
@@ -164,6 +166,7 @@ form.addEventListener("submit", (e) => {
     } else {
       cardNumber.parentElement.classList.add("valid");
       cardNumber.parentElement.classList.remove("not-valid");
+      cardNumber.classList.remove("error-border");
       cardNumber.parentElement.lastElementChild.style.display = "none";
     }
 
@@ -181,6 +184,7 @@ form.addEventListener("submit", (e) => {
     } else {
       zipCode.parentElement.classList.add("valid");
       zipCode.parentElement.classList.remove("not-valid");
+      zipCode.classList.remove("error-border");
       zipCode.parentElement.lastElementChild.style.display = "none";
     }
 
@@ -198,6 +202,7 @@ form.addEventListener("submit", (e) => {
     } else {
       cvv.parentElement.classList.add("valid");
       cvv.parentElement.classList.remove("not-valid");
+      cvv.classList.remove("error-border");
       cvv.parentElement.lastElementChild.style.display = "none";
     }
   } else {
